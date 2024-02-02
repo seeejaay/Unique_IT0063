@@ -1,3 +1,7 @@
+const changeColor = () => {
+  var element = document.querySelector(".wrapper");
+  element.classList.toggle("dark");
+};
 const button = document.getElementById("_button");
 const bar = document.getElementById("_progressbar");
 const fill = document.getElementById("_fill");
@@ -42,4 +46,9 @@ bar.addEventListener("animationend", () => {
     contain.style.visibility = "hidden";
     circle.style.visibility = "visible";
   }, 800);
+
+  setTimeout(() => {
+    circle.style.visibility = "hidden";
+    circle.style.opacity = "0";
+  }, 2000);
 });

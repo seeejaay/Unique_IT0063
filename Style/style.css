@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +10,163 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex-direction: column;
+  margin: 0 1.875rem;
+  transition: all 500ms ease-in;
   min-height: 100vh;
-  background: #1f1d1d;
-  width: 100%;
 }
 
 .wrapper {
+  margin: 0.125rem auto;
+  width: 100%;
+  max-width: 50rem;
+  border: 1px solid #212427;
+  border-radius: 0.3125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1.875rem;
+  background: #96120b;
+  transition: 600ms ease-in;
+  color: #ffdc5c;
+
+  a {
+    color: #212427;
+    transition: 600ms;
+  }
+  .bx:hover {
+    color: blue;
+    transition: 200ms ease;
+  }
+}
+.dark {
+  background-color: #96120b;
+  color: #ffdc5c;
+  border: 1px solid #96120b;
+
+  a {
+    color: #ffdc5c;
+  }
+  .bx:hover {
+    color: #47f3ff;
+  }
+}
+
+.btn {
+  width: 100%;
+  height: auto;
+  margin: 1.25rem auto;
+}
+
+.btn-color-change {
+  width: 100%;
+  max-width: 6.25rem;
+  margin: 1.25rem;
+  height: 5rem;
+
+  cursor: pointer;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 1);
+  border-radius: 0.3125rem;
+  border: slategray 0.0625rem solid;
+  transition: 0.4s;
+}
+
+.btn-color-change:hover {
+  background-color: #96120b;
+  color: #ffdc5c;
+  transform: scale(1.1);
+  border: none;
+  box-shadow: none;
+}
+
+.profile,
+.information {
+  margin: 2.5rem;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 75rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.profile-pic {
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  border-radius: 10rem;
+}
+
+.profile-name,
+.profile-profession {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+  text-align: justify;
+}
+
+.logo {
+  width: 100%;
+  max-width: 3.25rem;
+}
+
+.bx {
+  font-size: 3rem;
+  margin-top: 1.875rem;
+}
+
+.tertiary,
+.secondary {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  p {
+    margin: 1.25rem;
+  }
+}
+
+.profile-contact-icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 500px;
-  min-height: 200px;
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.profile-contact {
+  margin: 1.5rem auto;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.wrapper-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
   flex-direction: column;
 }
 
@@ -35,11 +179,11 @@
 }
 
 .button {
+  border: 2px solid #ffdc5c;
+  color: #ffdc5c;
   width: 100%;
   max-width: 200px;
-  border: 2px solid greenyellow;
-  color: white;
-  background: linear-gradient(45deg, greenyellow 50%, transparent 50%);
+  background: linear-gradient(45deg, #ffdc5c 50%, transparent 50%);
   background-size: 250% 100%;
   background-position: 100%;
   height: 50px;
@@ -49,11 +193,9 @@
   opacity: 1;
   &:hover {
     background-position: 0%;
-
-    color: #1f1d1d;
+    color: #96120b;
     cursor: pointer;
   }
-
   &.active {
     visibility: hidden;
     opacity: 0;
@@ -65,7 +207,7 @@
   width: 100%;
   max-width: 600px;
   height: 30px;
-  background: white;
+  background: #ffdc5c;
   visibility: hidden;
   overflow: hidden;
   border-radius: 40px;
@@ -81,7 +223,7 @@
 .fill {
   height: 15px;
   border-radius: 10px;
-  background-color: #6a6e6b;
+  background-color: #96120b;
   width: 0;
   overflow: hidden;
 
@@ -195,15 +337,16 @@
   max-width: 300px;
   height: 0px;
   border-radius: 100%;
-  border: 3px dashed #35c528;
+  border: 3px dashed #ffdc5c;
   visibility: hidden;
+  transition: opacity 500ms ease-in;
   opacity: 0;
   &.active {
     transition: width 500ms ease-in;
     transition: height 800ms ease-in;
     transition: opacity 500ms ease-in;
-    height: 300px;
-    width: 100%;
+    height: 200px;
+    width: 200px;
     opacity: 1;
   }
 }
@@ -214,12 +357,16 @@
   text-align: center;
   margin: 0 0 0 10px;
 }
+a {
+  width: 100%;
+  max-width: 200px;
+}
 @keyframes move {
   0% {
     left: 0%;
   }
   100% {
-    left: 87%;
+    left: 93%;
   }
 }
 @keyframes fill {
